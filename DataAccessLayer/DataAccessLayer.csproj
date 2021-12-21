@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90B0FE04-B2FF-458A-A63B-538F8B8570A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccessLayer</RootNamespace>
+    <AssemblyName>DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>05109bce</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Migrations\202107300608143_Initial.cs" />
+    <Compile Include="Migrations\202107300608143_Initial.Designer.cs">
+      <DependentUpon>202107300608143_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107300748018_AdminModel.cs" />
+    <Compile Include="Migrations\202107300748018_AdminModel.Designer.cs">
+      <DependentUpon>202107300748018_AdminModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107301042146_CatModel.cs" />
+    <Compile Include="Migrations\202107301042146_CatModel.Designer.cs">
+      <DependentUpon>202107301042146_CatModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107301042573_BooksModel.cs" />
+    <Compile Include="Migrations\202107301042573_BooksModel.Designer.cs">
+      <DependentUpon>202107301042573_BooksModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107301135466_DonationModel.cs" />
+    <Compile Include="Migrations\202107301135466_DonationModel.Designer.cs">
+      <DependentUpon>202107301135466_DonationModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107311105362_UserModelUpdate.cs" />
+    <Compile Include="Migrations\202107311105362_UserModelUpdate.Designer.cs">
+      <DependentUpon>202107311105362_UserModelUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108030530209_userupdated.cs" />
+    <Compile Include="Migrations\202108030530209_userupdated.Designer.cs">
+      <DependentUpon>202108030530209_userupdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108030641002_manageDonation.cs" />
+    <Compile Include="Migrations\202108030641002_manageDonation.Designer.cs">
+      <DependentUpon>202108030641002_manageDonation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108030641288_manageDonations.cs" />
+    <Compile Include="Migrations\202108030641288_manageDonations.Designer.cs">
+      <DependentUpon>202108030641288_manageDonations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Admin.cs" />
+    <Compile Include="Model\Books.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Donation.cs" />
+    <Compile Include="Model\ManageDonation.cs" />
+    <Compile Include="Model\RespLogin.cs" />
+    <Compile Include="Model\RespMessage.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\ViewDonation.cs" />
+    <Compile Include="OrphanageContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107300608143_Initial.resx">
+      <DependentUpon>202107300608143_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107300748018_AdminModel.resx">
+      <DependentUpon>202107300748018_AdminModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107301042146_CatModel.resx">
+      <DependentUpon>202107301042146_CatModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107301042573_BooksModel.resx">
+      <DependentUpon>202107301042573_BooksModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107301135466_DonationModel.resx">
+      <DependentUpon>202107301135466_DonationModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107311105362_UserModelUpdate.resx">
+      <DependentUpon>202107311105362_UserModelUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108030530209_userupdated.resx">
+      <DependentUpon>202108030530209_userupdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108030641002_manageDonation.resx">
+      <DependentUpon>202108030641002_manageDonation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108030641288_manageDonations.resx">
+      <DependentUpon>202108030641288_manageDonations.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
